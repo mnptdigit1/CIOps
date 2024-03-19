@@ -35,9 +35,9 @@ spec:
             git url: pipelineParams.repo, branch: pipelineParams.branch, credentialsId: 'git_read'
             
             // Adding the "Export Kubeconfig Secret" stage
-            stage('Export Kubeconfig Secret') {
+          /*  stage('Export Kubeconfig Secret') {
                 container(name: 'egov-deployer', shell: '/bin/sh') {
-                    sh """
+                       sh """
                         # Create the .kube directory
                         mkdir -p /root/.kube
                         
@@ -52,7 +52,7 @@ spec:
                         kubectl get nodes
                     """
                 }
-            }
+            } */
             
             stage('Deploy Images') {
                 container(name: 'egov-deployer', shell: '/bin/sh') {
