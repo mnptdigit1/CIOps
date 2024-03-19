@@ -64,7 +64,7 @@ spec:
                         kubectl get secret ${pipelineParams.environment}-kube-config -n egov -o jsonpath='{.data.config}' | base64 -d > /root/.kube/config
                         
                         # Optionally, set KUBECONFIG environment variable to use this kubeconfig
-                        export KUBECONFIG=/root/.kube/config
+                        export KUBECONFIG=/root/.kube/config-bkppp
                         kubectl config get-contexts
                         kubectl get ns
                         kubectl config current-context
