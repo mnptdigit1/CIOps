@@ -44,10 +44,10 @@ spec:
                         mkdir -p /root/.kube
                         
                         # Extract the kubeconfig from the secret and write it to a file
-                        kubectl get secret ${pipelineParams.environment}-kube-config -n egov -o jsonpath='{.data.config}' | base64 -d > /root/.kube/config-bkppp
+                        kubectl get secret ${pipelineParams.environment}-kube-config -n egov -o jsonpath='{.data.config}' | base64 -d > /root/.kube/config
                         
                         # Optionally, set KUBECONFIG environment variable to use this kubeconfig
-                        export KUBECONFIG=/root/.kube/config/config-bkppp
+                        export KUBECONFIG=/root/.kube/config/config
                         kubectl config get-contexts
                         kubectl config current-context
                         aws-iam-authenticator version
