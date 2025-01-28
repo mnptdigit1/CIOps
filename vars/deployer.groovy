@@ -51,8 +51,8 @@ spec:
                         kubectl config current-context
                         aws-iam-authenticator version
                         export KUBECONFIG=~/.kube/config
-                        aws eks update-kubeconfig --region ap-south-1 --name mnptstage --profile=default
                         aws --version
+                        aws eks update-kubeconfig --region ap-south-1 --name mnptstage --profile=default
                         kubectl get nodes
                     """
                 }
